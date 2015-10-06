@@ -8,5 +8,6 @@
         android:src="@drawable/home_main"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
         />
 </RelativeLayout>
