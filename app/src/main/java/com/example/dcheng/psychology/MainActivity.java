@@ -3,6 +3,7 @@ package com.example.dcheng.psychology;
 import android.content.Intent;
 import android.provider.SyncStateContract;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,7 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
     private RecyclerView.Adapter mAdapter;
     private List<HomeItemData> itemDataList;
 

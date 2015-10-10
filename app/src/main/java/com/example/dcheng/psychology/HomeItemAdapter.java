@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.dcheng.psychology.Activity.ChatActivity;
+import com.example.dcheng.psychology.Activity.VideoListActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,13 +48,35 @@ public class HomeItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             homeItemViewHolder.title.setText(mItemList.get(position).title);
             homeItemViewHolder.info.setText(mItemList.get(position).info);
             homeItemViewHolder.image.setImageResource(mItemList.get(position).photoId);
-            homeItemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(mContext, PsychologyTestActivity.class);
-                    mContext.startActivity(intent);
-                }
-            });
+            if(position == 1) {
+                homeItemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(mContext, PsychologyTestActivity.class);
+                        mContext.startActivity(intent);
+                    }
+                });
+            }
+            if(position == 2)
+            {
+                homeItemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(mContext, ChatActivity.class);
+                        mContext.startActivity(intent);
+                    }
+                });
+            }
+            if(position == 3)
+            {
+                homeItemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(mContext, VideoListActivity.class);
+                        mContext.startActivity(intent);
+                    }
+                });
+            }
         }
     }
 

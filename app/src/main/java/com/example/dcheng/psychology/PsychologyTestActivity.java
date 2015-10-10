@@ -3,6 +3,7 @@ package com.example.dcheng.psychology;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -13,7 +14,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class PsychologyTestActivity extends AppCompatActivity {
+public class PsychologyTestActivity extends FragmentActivity {
     private int questionIndex;
     private TextView textView;
     private TextView indexView;
