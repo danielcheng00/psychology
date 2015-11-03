@@ -79,19 +79,33 @@ public class VideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     }
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        VideoData videoData = getItem(position);
+        final VideoData videoData = getItem(position);
         VideoViewHolder videoViewHolder = (VideoViewHolder) holder;
         videoViewHolder.tv.setText(videoData.title);
-        videoViewHolder.iv.setImageResource(R.drawable.home_main);
+        //videoViewHolder.iv.setImageResource(R.drawable.home_main);
+        Bitmap bitmap = getVideoThumbnail(context, videoData.id);
+        videoViewHolder.iv.setImageBitmap(bitmap);
         videoViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, VideoPlayActivity.class);
+                intent.putExtra("ID", videoData.id);
                 context.startActivity(intent);
             }
         });
 
     }
+
+    public Bitmap getVideoThumbnail(Context context, int id) {
+        String pkgName = context.getPackageName();
+        Uri uri = Uri.parse("android.resource://" + pkgName + "/"+id);
+        MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+        retriever.setDataSource(context, uri);
+        Bitmap bitmap = retriever.getFrameAtTime(5000000
+                , MediaMetadataRetriever.OPTION_PREVIOUS_SYNC);
+        return bitmap;
+    }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext())

@@ -66,8 +66,7 @@ public class MainActivity extends FragmentActivity {
         itemDataList = new ArrayList<HomeItemData>();
         itemDataList.add(new HomeItemData(ItemType.IMAGE,"","",R.drawable.home_main));
         itemDataList.add(new HomeItemData(ItemType.CARD,"心理测试","开始测试吧",R.drawable.bird));
-        itemDataList.add(new HomeItemData(ItemType.CARD,"心理测试","开始测试吧",R.drawable.bird));
-        itemDataList.add(new HomeItemData(ItemType.CARD,"心理测试","开始测试吧",R.drawable.bird));
-        itemDataList.add(new HomeItemData(ItemType.CARD,"心理测试","开始测试吧",R.drawable.bird));
+        itemDataList.add(new HomeItemData(ItemType.CARD,"树洞","将你的小秘密放进树洞",R.drawable.bird));
+        itemDataList.add(new HomeItemData(ItemType.CARD,"视频","放松放松",R.drawable.bird));
     }
 }

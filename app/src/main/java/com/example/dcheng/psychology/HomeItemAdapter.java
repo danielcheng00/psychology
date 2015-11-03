@@ -32,13 +32,13 @@ public class HomeItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
     @Override
     public int getItemViewType(int position) {
-        if(mItemList.get(position).type == ItemType.IMAGE)
+        if(mItemList.get(position).type == ItemType.TEXT)
             return 0;
         return 1;
     }
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        if(mItemList.get(position).type == ItemType.IMAGE)
+        if(mItemList.get(position).type == ItemType.TEXT)
         {
             ImageViewHolder imageViewHolder = (ImageViewHolder) holder;
             imageViewHolder.image.setImageResource(mItemList.get(position).photoId);

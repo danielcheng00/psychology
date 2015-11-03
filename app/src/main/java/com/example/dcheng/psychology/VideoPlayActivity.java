@@ -1,6 +1,7 @@
 package com.example.dcheng.psychology;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.widget.MediaController;
 import android.net.Uri;
@@ -17,10 +18,11 @@ public class VideoPlayActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_play);
-
+        Intent myIntent = getIntent();
+        int id = myIntent.getIntExtra("ID",0);
     // Get a reference to the VideoView
 
-    mVideoView = (VideoView) findViewById(R.id.video_viewer);
+        mVideoView = (VideoView) findViewById(R.id.video_viewer);
 
     // Add a Media controller to allow forward/reverse/pause/resume
 
@@ -32,7 +34,7 @@ public class VideoPlayActivity extends Activity {
 
     mVideoView
             .setVideoURI(Uri
-            .parse("android.resource://com.example.dcheng.psychology/raw/moon"));
+            .parse("android.resource://com.example.dcheng.psychology/"+id));
 
     // Add an OnPreparedListener to enable the MediaController once the video is ready
     mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {

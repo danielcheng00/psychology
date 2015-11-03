@@ -34,6 +34,7 @@ public class VideoListActivity extends Activity {
     void initializeData()
     {
         videoDataList = new ArrayList<VideoData>();
-        videoDataList.add(new VideoData("android.resource://course.examples.dcheng.psychology/raw/moon", "moon"));
+        videoDataList.add(new VideoData(R.raw.moon, "Trip to moon"));
+        videoDataList.add(new VideoData(R.raw.vid, "Play VID"));
     }
 }
